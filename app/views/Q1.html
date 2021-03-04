@@ -1,0 +1,134 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "/index",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/Q2" method="post" class="form">
+
+        {% from 'checkboxes/macro.njk' import checkboxes %}
+
+        {% set otherHtml %}
+        {{ input({
+          id: "other",
+          name: "other",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "Please specify"
+          }
+        }) }}
+      {% endset -%}
+
+      {% set typeHtml %}
+      {{ checkboxes({
+        "idPrefix": "1",
+        "name": "1",
+        "fieldset": {
+          "legend": {
+            "text": "With:"
+          }
+        },
+        "items": [
+          {
+            "value": "patient",
+            "text": "Patient"
+          },
+          {
+            "value": "family",
+            "text": "Family"
+          },
+          {
+            "value": "staff",
+            "text": "Staff"
+          }
+        ]
+      }) }}
+    {% endset -%}
+
+        {{ checkboxes({
+          "idPrefix": "example",
+          "name": "example",
+          "fieldset": {
+            "legend": {
+              "text": "What type of response or review was required?",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "after_action_review",
+              "text": "After Action Review"
+            },
+            {
+              "value": "incident_subject_to_duty_of_candour_or_being_open",
+              "text": "Incident subject to Duty of Candour or Being Open process",
+              "conditional": {
+                "html": typeHtml
+              } 
+            },
+            {
+              "value": "structured_judgement_review",
+              "text": "Structured Judgement Review"
+            },
+            {
+              "value": "clinical_review",
+              "text": "Clinical Review"
+            },
+            {
+              "value": "hot_debrief",
+              "text": "Hot Debrief"
+            },
+            {
+              "value": "safety_huddle",
+              "text": "Safety Huddle"
+            },
+            {
+              "value": "audit",
+              "text": "Audit"
+            },
+            {
+              "value": "risk_assessment",
+              "text": "Risk Assessment"
+            },
+            {
+              "value": "other",
+              "text": "Other",
+              "conditional": {
+                "html": otherHtml
+              }   
+            },
+            {
+              "value": "no_further_action",
+              "text": "No further action at this time"
+            }
+          ]
+        }) }}
+
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

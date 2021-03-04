@@ -1,0 +1,408 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "/Q4",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/Q5mitigate" method="post" class="form">
+
+
+
+        {% set 1Html %}
+        {{ checkboxes({
+          "idPrefix": "1",
+          "name": "1",
+          "fieldset": {
+            "legend": {
+              "text": ""
+            }
+          },
+          "items": [
+            {
+              "value": "National guidelines and policies",
+              "text": "National guidelines and policies"
+            },
+            {
+              "value": "Economic regulatory context",
+              "text": "Economic regulatory context"
+            },
+            {
+              "value": "Societal factors",
+              "text": "Societal factors"
+            }
+          ]
+        }) }}
+      {% endset -%}
+
+      {% set 2Html %}
+      {{ checkboxes({
+        "idPrefix": "2",
+        "name": "2",
+        "fieldset": {
+          "legend": {
+            "text": ""
+          }
+        },
+        "items": [
+          {
+            "value": "Structure",
+            "text": "Structure"
+          },
+          {
+            "value": "Priorities/resource",
+            "text": "Priorities/resource"
+          },
+          {
+            "value": "Safety culture",
+            "text": "Safety culture"
+          },
+          {
+            "value": "Policy, standards and goals",
+            "text": "Policy, standards and goals"
+          }
+        ]
+      }) }}
+    {% endset -%}
+
+    {% set 3Html %}
+    {{ checkboxes({
+      "idPrefix": "3",
+      "name": "3",
+      "fieldset": {
+        "legend": {
+          "text": ""
+        }
+      },
+      "items": [
+        {
+          "value": "Safety focus",
+          "text": "Safety focus"
+        },
+        {
+          "value": "Work planning and delivery",
+          "text": "Work planning and delivery"
+        },
+        {
+          "value": "Staffing levels and skill mix",
+          "text": "Staffing levels and skill mix"
+        },
+        {
+          "value": "Workload, shift patterns and skill mix",
+          "text": "Workload, shift patterns and skill mix"
+        },
+        {
+          "value": "Training design",
+          "text": "Training design"
+        },
+        {
+          "value": "Training availability/accessibility",
+          "text": "Training availability/accessibility"
+        },
+        {
+          "value": "Staff supervision",
+          "text": "Staff supervision"
+        },
+        {
+          "value": "Staff competence",
+          "text": "Staff competence"
+        }
+      ]
+    }) }}
+  {% endset -%}
+
+  {% set 4Html %}
+  {{ checkboxes({
+    "idPrefix": "4",
+    "name": "4",
+    "fieldset": {
+      "legend": {
+        "text": ""
+      }
+    },
+    "items": [
+      {
+        "value": "Environmental factors",
+        "text": "Environmental factors"
+      },
+      {
+        "value": "Design of physical environment",
+        "text": "Design of physical environment"
+      },
+      {
+        "value": "Administrative factors",
+        "text": "Administrative factors"
+      }
+    ]
+  }) }}
+{% endset -%}
+
+{% set 5Html %}
+{{ checkboxes({
+  "idPrefix": "5",
+  "name": "5",
+  "fieldset": {
+    "legend": {
+      "text": ""
+    }
+  },
+  "items": [
+    {
+      "value": "Displays",
+      "text": "Displays"
+    },
+    {
+      "value": "Integrity and maintenance",
+      "text": "Integrity and maintenance"
+    },
+    {
+      "value": "Positioning and availability",
+      "text": "Positioning and availability"
+    },
+    {
+      "value": "Usability/design",
+      "text": "Usability/design"
+    }
+  ]
+}) }}
+{% endset -%}
+
+{% set 6Html %}
+{{ checkboxes({
+  "idPrefix": "6",
+  "name": "6",
+  "fieldset": {
+    "legend": {
+      "text": ""
+    }
+  },
+  "items": [
+  {
+    "value": "Culture",
+    "text": "Culture"
+  },
+  {
+    "value": "Team structure and consistency",
+    "text": "Team structure and consistency"
+  },
+  {
+    "value": "Leadership",
+    "text": "Leadership"
+  },
+  {
+    "value": "Communication management",
+    "text": "Communication management"
+  },
+  {
+    "value": "Verbal communication",
+    "text": "Verbal communication"
+  },
+  {
+    "value": "Written communication",
+    "text": "Written communication"
+  },
+  {
+    "value": "Non-verbal communication",
+    "text": "Non-verbal communication"
+  }
+  ]
+}) }}
+{% endset -%}
+
+{% set 7Html %}
+{{ checkboxes({
+  "idPrefix": "7",
+  "name": "7",
+  "fieldset": {
+    "legend": {
+      "text": ""
+    }
+  },
+  "items": [
+    {
+      "value": "Clinical condition",
+      "text": "Clinical condition"
+    },
+    {
+      "value": "Plans, guidance, policies, procedures and protocols",
+      "text": "Plans, guidance, policies, procedures and protocols"
+    },
+    {
+      "value": "Decision-making aids",
+      "text": "Decision-making aids"
+    },
+    {
+      "value": "Procedural or task design and clarity",
+      "text": "Procedural or task design and clarity"
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+{% set 8Html %}
+{{ checkboxes({
+  "idPrefix": "8",
+  "name": "8",
+  "fieldset": {
+    "legend": {
+      "text": ""
+    }
+  },
+  "items": [
+    {
+      "value": "Physical factors",
+      "text": "Physical factors"
+    },
+    {
+      "value": "Social factors",
+      "text": "Social factors"
+    },
+    {
+      "value": "Psychological factors",
+      "text": "Psychological factors"
+    }
+  ]
+}) }}
+{% endset -%}
+
+{% set 9Html %}
+{{ checkboxes({
+  "idPrefix": "9",
+  "name": "9",
+  "fieldset": {
+    "legend": {
+      "text": ""
+    }
+  },
+  "items": [
+    {
+      "value": "Physical health",
+      "text": "Physical health"
+    },
+    {
+      "value": "Psychological/mental health",
+      "text": "Psychological/mental health"
+    },
+    {
+      "value": "Social domestic factors",
+      "text": "Social domestic factors"
+    },
+    {
+      "value": "Personality factors",
+      "text": "Personality factors"
+    },
+    {
+      "value": "Social factors",
+      "text": "Social factors"
+    },
+    {
+      "value": "Cognitive factors",
+      "text": "Cognitive factors"
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+        {{ checkboxes({
+          "idPrefix": "example",
+          "name": "example",
+          "fieldset": {
+            "legend": {
+              "text": "What did you identify as the contributory factors?",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "External context factors",
+              "text": "External context factors",
+              "conditional": {
+                "html": 1Html
+              } 
+            },
+            {
+              "value": "Organisational and strategic",
+              "text": "Organisational and strategic",
+              "conditional": {
+                "html": 2Html
+              } 
+            },
+            {
+              "value": "Operational management factors",
+              "text": "Operational management factors",
+              "conditional": {
+                "html": 3Html
+              } 
+            },
+            {
+              "value": "Workplace factors",
+              "text": "Workplace factors",
+              "conditional": {
+                "html": 4Html
+              } 
+            },
+            {
+              "value": "Equipment and technology factors",
+              "text": "Equipment and technology factors",
+              "conditional": {
+                "html": 5Html
+              } 
+            },
+            {
+              "value": "Team and social factors",
+              "text": "Team and social factors",
+              "conditional": {
+                "html": 6Html
+              } 
+            },
+            {
+              "value": "Task factors",
+              "text": "Task factors",
+              "conditional": {
+                "html": 7Html
+              } 
+            },
+            {
+              "value": "Individual patient factors",
+              "text": "Individual patient factors",
+              "conditional": {
+                "html": 8Html
+              } 
+            },
+            {
+              "value": "Individual staff factors",
+              "text": "Individual staff factors",
+              "conditional": {
+                "html": 9Html
+              } 
+            }
+          ]
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

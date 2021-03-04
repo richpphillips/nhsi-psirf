@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "/Q7",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/task-list-done" method="post" class="form">
+
+        {% from 'textarea/macro.njk' import textarea %}
+
+        {{ textarea({
+          "name": "safety_recommendations",
+          "id": "safety_recommendations",
+          "rows": "5",
+          "label": {
+              "text": "What actions are you taking as a result of this response?",
+              "classes": "nhsuk-label--l",
+              "isPageHeading": true
+          },
+          "hint": {
+              "text": ""
+          }
+        }) }}
+
+     <div id="id_medication_choice_1-group" class="form-group">
+        <label id="id_medication_choice_1-label" class="form-label" for="id_medication_choice_1">
+        <h1><span>
+                            <span style="font-size:19px;float:left;padding-bottom:10px;">Action 2:</span> 
+                            <span style="font-size:19px;float:right;padding-bottom:10px;">
+                              <a href='/Q8tbox'>
+                                <button class="custom_link_button" type="button" value=medication_choice_1 name="remove-field" id="remove-medication_choice_1">Remove</button>
+                              </a>
+                            </span> 
+            </span></h1>
+        </label>
+        <textarea name="medication_choice_1" cols="10" rows="5" class="form-control" id="id_medication_choice_1">
+        </textarea>
+    </div>
+
+    <div id="id_medication_choice_1-group" class="form-group">
+      <label id="id_medication_choice_1-label" class="form-label" for="id_medication_choice_1">
+      <h1><span>
+                          <span style="font-size:19px;float:left;padding-bottom:10px;">Action 3:</span> 
+                          <span style="font-size:19px;float:right;padding-bottom:10px;">
+                            <a href='/Q8tbox'>
+                              <button class="custom_link_button" type="button" value=medication_choice_1 name="remove-field" id="remove-medication_choice_1">Remove</button>
+                            </a>
+                          </span> 
+          </span></h1>
+      </label>
+      <textarea name="medication_choice_1" cols="10" rows="5" class="form-control" id="id_medication_choice_1">
+      </textarea>
+  </div>
+
+          <a href='/Q8tbox3'>
+          <div class="form-group"><input class="button-add-another" type="button" value="Add another" id="add-field" name="add-field"></div>
+          </a>
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

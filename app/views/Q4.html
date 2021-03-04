@@ -1,0 +1,95 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "/Q3",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/Q5" method="post" class="form">
+
+        {{ checkboxes({
+          "idPrefix": "example",
+          "name": "example",
+          "fieldset": {
+            "legend": {
+              "text": "Are responses being undertaken by other bodies?",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "hsib_led_maternity_and_neonatal_incident_investigation",
+              "text": "HSIB led maternity and neonatal incident investigation"
+            },
+            {
+              "value": "nhsei_mental_health-related_homicide_investigation",
+              "text": "NHS E/I regionally commissioned mental health-related homicide investigation"
+            },
+            {
+              "value": "child_death_overview_panel",
+              "text": "Child death Overview Panel"
+            },
+            {
+              "value": "leder_review",
+              "text": "LeDeR review"
+            },
+            {
+              "value": "safeguarding_adult_review",
+              "text": "Safeguarding adult review"
+            },
+            {
+              "value": "serious_case_review",
+              "text": "Serious case review"
+            },
+            {
+              "value": "domestic_homicide_review",
+              "text": "Domestic homicide review"
+            },
+            {
+              "value": "incident_investigation_in_screening_programmes",
+              "text": "Incident investigation in screening programmes"
+            },
+            {
+              "value": "ppo_investigation",
+              "text": "PPO investigation"
+            },
+            {
+              "value": "investigation_by_the_police",
+              "text": "Investigation by the police (criminal)"
+            },
+            {
+              "value": "coroner_inquest",
+              "text": "Coroner inquest"
+            },
+            {
+              "value": "no_further_action",
+              "text": "No responses are being undertaken by other bodies"
+            }
+          ]
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

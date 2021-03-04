@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "/Q7",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/task-list-done" method="post" class="form">
+
+        {% from 'textarea/macro.njk' import textarea %}
+
+        {{ textarea({
+          "name": "safety_recommendations",
+          "id": "safety_recommendations",
+          "rows": "5",
+          "label": {
+              "text": "What actions are you taking as a result of this response?",
+              "classes": "nhsuk-label--l",
+              "isPageHeading": true
+          },
+          "hint": {
+              "text": ""
+          }
+        }) }} 
+        <a href='/Q8tbox'>
+          <div class="form-group"><input class="button-add-another" type="button" value="Add another" id="add-field" name="add-field"></div>
+        </a>
+
+        <script>
+        $("#add-field").click(function(){
+              $("#safety_recommendations").append("<div><br><input type='text'/><br></div>");
+
+          })
+         </script>
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

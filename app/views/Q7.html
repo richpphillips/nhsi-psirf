@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "/Q6",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/Q8" method="post" class="form">
+
+        {% from 'textarea/macro.njk' import textarea %}
+
+        {{ textarea({
+          "name": "safety_recommendations",
+          "id": "safety_recommendations",
+          "rows": "5",
+          "label": {
+              "text": "What safety recommendations have been made as a result of this PSII?",
+              "classes": "nhsuk-label--l",
+              "isPageHeading": true
+          },
+          "hint": {
+              "text": "Include who the recommendations are being made to, and what they entail."
+          }
+        }) }}
+        <a href='/Q7tbox'>
+        <div class="form-group"><input class="button-add-another" type="button" value="Add another" id="add-field" name="add-field"></div>
+        </a>
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+SOW5 PSIRF Questions Prototype - Tasklist
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "/Q8",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="grid-row">
+        <header class="page-heading page-heading-with-context">
+            <h1 class="heading-xlarge">Event Details</h1>
+            <p>You can tell us more about the event to assist our analysis or you can submit this record at any time</p>
+            <br>
+        </header>
+    </div>
+
+    <div class="grid-row">
+        <div class="form-group">
+            <table id="your-details">
+                <tbody>
+
+                    
+
+                        <tr id="mandatory_questions">
+                            <td class="task" style="padding-right: 10px; word-wrap: break-word;">
+
+                                    
+                                        <a href="/Q9">
+                                            <span class="task-name">Mandatory event questions</span>
+                                            <strong class="task-finished" alt="mandatory_questions: Completed">Completed</strong>
+                                        </a>
+                                    
+
+                            </td>
+                        </tr>
+
+                    
+
+                        <tr id="actions_behaviours">
+                            <td class="task" style="padding-right: 10px; word-wrap: break-word;">
+
+                                    
+                                        <a href="/Q9">
+                                            <span class="task-name">People - actions</span>
+                                            <!--<strong class="task-finished task-in-progress" alt="actions_behaviours: Started">To Do</strong>-->
+                                        </a>
+                                    
+
+                            </td>
+                        </tr>
+
+                    
+
+                        <tr id="contextual_info">
+                            <td class="task" style="padding-right: 10px; word-wrap: break-word;">
+
+                                    
+                                        <a href="/Q9">
+                                            <span class="task-name">Learning points and further details</span>
+                                            <!--<strong class="task-finished task-in-progress" alt="contextual_info: Started">To Do</strong>-->
+                                        </a>
+                                    
+
+                            </td>
+                        </tr>
+
+                        <tr id="new">
+                          <td class="task" style="padding-right: 10px; word-wrap: break-word;">
+
+                                  
+                                      <a href="/Q9">
+                                          <span class="task-name">PSIRF Questions</span>
+                                          <!--<strong class="task-finished task-in-progress" alt="contextual_info: Started">To Do</strong>-->
+                                          <strong class="task-finished" alt="mandatory_questions: Completed">Completed</strong>
+                                      </a>
+                                  
+
+                          </td>
+                      </tr>
+
+                    
+
+                </tbody>
+            </table>
+        </div>
+        
+            <div class="form-group">
+                <br/>
+                <a href="/task-list-done" class="button">Review and submit</a>
+                <br/>
+            </div>
+        
+    </div>
+
+    </div>  
+
+  </div>
+{% endblock %}

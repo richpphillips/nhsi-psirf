@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "/Q5mitigate",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/Q7" method="post" class="form">
+
+        {% from 'textarea/macro.njk' import textarea %}
+
+        {{ textarea({
+          "name": "example-longer",
+          "id": "example-longer",
+          "rows": "10",
+          "label": {
+              "text": "Provide a summary of your analysis",
+              "classes": "nhsuk-label--l",
+              "isPageHeading": true
+          },
+          "hint": {
+              "text": "Describe the interaction between the contributory and mitigating factors."
+          }
+        }) }}
+
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
